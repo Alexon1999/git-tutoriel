@@ -154,7 +154,7 @@ git remote rename renameThisRemote renameByThisRemote
 # change the remote repo url
 git remote set-url <<name of remote>> <<repo link>>
 
-# delete remote
+# delete a remote
 git remote remove <<name of remote>>
 
 # Initial push to remote repo(github)
