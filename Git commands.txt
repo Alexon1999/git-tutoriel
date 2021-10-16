@@ -31,7 +31,7 @@ git status -h or --help
 git ls-files
 alias => git ls
 
-#remove files from our directory and repo staging area
+#remove files/folders from our directory and repo staging area
 git rm app.js index.html
 
 #remove just for repo staging area
