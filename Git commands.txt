@@ -20,21 +20,21 @@ git add *.js // all the js files
 git add . // all the files and folders
 alias => git aa
 
-# Voir l'etat du contenu stagging area (index)
+# Voir l'etat du contenu staging area (index)
 git status
 git status -s  : -s, --short   show status concisely
 alias => git sh
 
 git status -h or --help
 
-#folders and files inside the stagging area
+#folders and files inside the staging area
 git ls-files
 alias => git ls
 
-#remove files from our directory and repo stagging area
+#remove files from our directory and repo staging area
 git rm app.js index.html
 
-#remove just for repo stagging area
+#remove just for repo staging area
 git rm --cached -r <<name of directory or filename>>
 demo directory is removed from staging area
 git rm --cached -r demo/
