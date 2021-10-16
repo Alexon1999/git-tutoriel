@@ -1,0 +1,266 @@
+  --------------------------------------------------
+[   #Open config setting by an editor (vs code)	      ]
+[   git config --global -e			      ]
+[   alias => git setting				      ]
+  ---------------------------------------------------
+
+# Initialize a repo
+git init
+
+#help
+git <<command name>> -h
+ex : git rm -h
+git config -h
+git add -h
+
+# Add to local repo
+git add file.js index.js hello.py 
+git add *.js // all the js files
+
+git add . // all the files and folders
+alias => git aa
+
+# Voir l'etat du contenu stagging area (index)
+git status
+git status -s  : -s, --short   show status concisely
+alias => git sh
+
+git status -h or --help
+
+#folders and files inside the stagging area
+git ls-files
+alias => git ls
+
+#remove files from our directory and repo stagging area
+git rm app.js index.html
+
+#remove just for repo stagging area
+git rm --cached -r <<name of directory or filename>>
+demo directory is removed from staging area
+git rm --cached -r demo/
+-r : recursively (files insides)
+
+#rename
+git mv app.js index.js
+
+# always review what we have in staging area before commit
+git status give the file that heve been affected , modified etc
+so to see the exact lines of code
+git diff : (unstagged changes) compare  staging area files with working directory
+git diff --staged : what we have in stagging area ( comparing files with last commit and with stagging area file )
+
+#diff tool
+git difftool 
+git difftool --staged
+
+# Commit to local repo
+git add . //put to staging area
+git commit -m 'Initial Commit'
+// add all modified files and commit
+git commit -am 'Initial commit'
+
+
+# tag a commit ( alias pour un commit id)
+git tag <<name of tag >>
+git checkout <<name of tag>>
+
+
+# undo changes
+- remove change of staging area
+git restore --staged file1.js demo/ etc
+
+- undo working directory changes (it will take the stagging area file1.js and copy to file1.js working directory)
+git restore file1.js demo/ etc
+
+#restore a file from a previous version (commit)
+HEAD~1 : last commit
+git restore --source=HEAD~1 file1.js
+
+# reset staging area
+git reset
+
+# remove the last commit
+git reset HEAD^
+git reset HEAD~1
+
+# Delete a specific commit definitly by creating a historic of the change
+git revert <<id commit>>
+git revert f205fdbd695ba128ef1603cfd163cf7cc8760bdd
+
+# all details of commit with id , message and date
+#Historique des commits 
+git log
+
+# move into a specific commit 
+git checkout <<id commit>> :(dans git log)
+ex: git checkout f205fdbd695ba128ef1603cfd163cf7cc8760bdd
+
+#get the specific commited file
+git checkout f205fdbd695ba128ef1603cfd163cf7cc8760bdd -- app.js
+
+# after you move to the commit by id
+git switch -c <<name of new branch>>
+
+#see difference between your local repo and github remote repo
+git diff
+
+# Create a new branch
+git branch <<name of the branch>>
+
+# see all branches , and branch on what you are
+git branch
+git branch -v
+ 
+# move into an another branch
+git checkout <<name of the branch>>
+
+# Create a new branch & move into that branch
+git checkout -b <<name of the branch>>
+
+# merge a branch to master branch
+git checkout master :move to master branch
+git merge <<name of the branch>>
+
+ex: git merge alexon
+
+# Delete a branch
+git branch -D <<name of the branch>>
+
+git add nameofthefile
+git commit -m "message"
+
+# if there is a problem of conficts in merging files
+git merge --abort // cancel the merge
+
+# Add remote github repo , origin : is a remote repository of github
+# << github repo url : https ou ssh >>
+
+origin is an alias for the remote repo link
+
+git remote add origin https://github.com/USERNAME/REPO.git  (https link)
+git remote add origin git@github.com:USERNAME/REPO.git (ssh link)
+
+
+# add another remote of some one else
+git remote add <<name of remote>> <<remote repo link>>
+
+# list of all remotes
+git remote -v
+git remote
+
+# rename a remote
+git remote rename renameThisRemote renameByThisRemote
+
+# change the remote repo url
+git remote set-url <<name of remote>> <<repo link>>
+
+# delete remote
+git remote remove <<name of remote>>
+
+# Initial push to remote repo(github)
+git push origin master
+git push -u origin master
+
+# Pushes after initial
+git push
+
+# push from different branch (if you are a dev with other person don't do a push to master , instead create a new branch and push to origin)
+git push origin <<created branch>> :on github repo it will ask to make a pull request to master branch
+ git push origin alexon
+
+# push directly a branch to origin master  , 
+ git push origin <<branch>>:master
+ git push origin alexon:master  :ex we push alexon branch to origin's  branch master
+
+# origin : is an alias of a remote repository of github
+ex: git pull origin master : we get all from origin's master
+git pull <<remote repo>> : 
+# get all changes from another remote's  master
+git pull <<remote repo>> master
+
+or get all from another remote's <<branch>>
+git pull <<remote repo>> <<branch>>
+
+
+# 1) clone a repository
+git clone <<(ssh or https remote repo link)>>
+
+git clone git@github.com:USER_NAME/REPO.git
+git clone https://github.com/USERNAME/REPO.git
+
+# specify the path
+git clone <<(ssh or https remote repo link)>> <<path>>
+git clone <<ssh or https link>> .  <-- . copy to the current directory -->
+
+git clone git@github.com:USER_NAME/REPO.git .
+
+# 2) clone a repository 
+git init
+git remote add origin <<(ssh or https remote repo link)>>
+git pull origin master
+
+
+# quiet 
+:q + enter
+
+# insert
+:i
+
+#write and quiet
+:wq
+
+# pwd : see the current path (working directory)
+
+#help
+git config --help
+git config -h
+
+#change default editor
+git config --global core.editor "code --wait"
+
+#auto crlf
+- windows
+git config --global core.autocrlf true
+-mac
+git config --global core.autocrlf input
+
+#diff tool vs code
+git config --global diff.tool vscode
+git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
+
+  --------------------------------------------------
+[   #Open config setting by an editor (vs code)	      ]
+[   git config --global -e			      ]
+[   alias => git setting			      ]
+  ---------------------------------------------------
+git config --global user.name 'Alexon1999'
+git config --global user.email alexon1999@gmail.com
+
+ctrl + L pour effacer tout l'ecran
+cd desktop : pour aller à un document
+cd .. : revenir au document precedent
+ls : voir les fichiers dans documents dedans
+ls -a : voir tous les fichier dans doc même les fichier cachés
+git add . : ajouter tous les fichier dans git repertoire
+git config --global --list : configuration globales
+
+
+git config --global alias.ls 'ls-files'
+
+https://delicious-insights.com/fr/articles/git-log/
+
+Un affichage agréable et pratique : git lg
+L’affichage par défaut du log est compliqué, difficilement exploitable. C’est un frein à l'utilisation de Git en ligne de commande.
+
+On va donc définir un alias git lg qu’on utilisera la plupart du temps à la place du git log standard et qui nous présentera un historique arborescent et synthétique, facile et agréable à lire :
+#
+git config --global alias.lg "log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'"
+ git lg
+#voir que 10 comiits
+git lg -10 # ou `-n 10` ou encore `--max-count=10`
+
+
+Il est fréquent de ne vouloir afficher que les commits modifiant un ou plusieurs fichiers ou répertoires : 
+git lg mon-fichier mon-répertoire un-autre-répertoire
+git lg *.html *.js
+git log -p # ou `--patch`

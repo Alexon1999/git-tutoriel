@@ -1,0 +1,25 @@
+install node
+
+sudo apt update
+sudo apt install nodejs npm
+
+update node
+nvm install v(latest version number)
+
+pwd : see the path
+
+cd / : go to root
+cd ~ : user directory
+cd : user directory
+
+# > :write
+# >> :append
+echo kldjfo > text.txt
+echo lkopkpp >> text.txt
+
+echo "Hello World" :marche avec ou sans guillemets
+
+https://hosting.review/tutorial/how-to-update-node/
+
+// terminals
+https://terminalsplash.com/

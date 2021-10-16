@@ -1,0 +1,30 @@
+[user]
+	email = alexon1999@gmail.com
+	name = Alexon1999
+[core]
+	editor = code --wait
+	longpaths = true
+	autocrlf = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[gui]
+	recentrepo = C:/Users/alexo/html
+	recentrepo = C:/Users/alexo/Desktop/React/Expense_Tracker
+[alias]
+	lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+	setting = config --global -e
+	ls = ls-files
+	st = status
+	br = branch
+	a = add
+	aa = add .
+	cm = commit -m
+	ch = checkout
+	sh = status -s
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = "code --wait --diff $LOCAL $REMOTE"
