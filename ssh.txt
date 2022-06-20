@@ -8,3 +8,8 @@ id_rsa and id_rsa.pub
 
 # add public key to gilab/github
 cat id_rsa.pub
+
+
+
+
+# https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/How-to-configure-GitLab-SSH-keys-for-secure-Git-connections
