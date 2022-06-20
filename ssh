@@ -1,0 +1,10 @@
+# Add SSH key
+
+ssh-keygen -o -t rsa -C "alexon.uthayakumar@gmail.com"
+
+# It Generates private/public key in ~/.ssh
+id_rsa and id_rsa.pub
+
+
+# add public key to gilab/github
+cat id_rsa.pub
